@@ -4,24 +4,36 @@ version = "0.1.0"
 description = "Simple analogue of instagram with chats"
 # documentation = ""
 authors = ["pocoomagad <kirillkalaev32@gmail.com>"]
-readme = ["README.md", "GUIDE_INSTALL.md"]
-urls = {}
-
+readme = "README.md"
 package-mode = false
+
+[tool.poetry.urls]
+"Master" = "https://github.com/pocoomagad/Ingram/tree/master"
+#master branch of project
+
 
 [tool.poetry.dependencies]
 python = "^3.13"
 fastapi = "^0.115.12"
 pydantic = "^2.11.4"
-pytest = "^8.3.5"
 bcrypt = "^4.3.0"
 asyncpg = "^0.30.0"
 sqlalchemy = "^2.0.40"
 aiosqlite = "^0.21.0"
 alembic = "^1.15.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+
+
 [tool.poetry.extras]
+#database dialect of your choice
 postgres = ["asyncpg"]
 sqlite = ["aiosqlite"]
+
+
+[tool.poetry.scripts]
+install_script = "poerty:install"
 
 
 [build-system]
