@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ingram"
+name = "Ingram"
 version = "0.1.0"
 description = "Simple analogue of instagram with chats"
 # documentation = ""
@@ -21,8 +21,9 @@ asyncpg = "^0.30.0"
 sqlalchemy = "^2.0.40"
 aiosqlite = "^0.21.0"
 alembic = "^1.15.2"
+uvicorn = "^0.34.2"
 
-[tool.poetry.group.dev.dependencies]
+[tool.poetry.dev-dependencies]
 pytest = "^8.3.5"
 
 
@@ -33,7 +34,8 @@ sqlite = ["aiosqlite"]
 
 
 [tool.poetry.scripts]
-install_script = "poerty:install"
+#Install all dependecies not dev
+install_script = "setup:install_depends"
 
 
 [build-system]
