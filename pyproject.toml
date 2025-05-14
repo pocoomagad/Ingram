@@ -7,6 +7,10 @@ authors = ["pocoomagad <kirillkalaev32@gmail.com>"]
 readme = "README.md"
 package-mode = false
 
+packages = [
+    {include = "setup"}
+]
+
 [tool.poetry.urls]
 "Master" = "https://github.com/pocoomagad/Ingram/tree/master"
 #master branch of project
@@ -35,7 +39,8 @@ sqlite = ["aiosqlite"]
 
 [tool.poetry.scripts]
 #Install all dependecies not dev
-install_script = "setup:install_depends"
+install-user = "setup.cfg:install_depends"
+install-dev = "setup.cfg:install_all_depends"
 
 
 [build-system]
